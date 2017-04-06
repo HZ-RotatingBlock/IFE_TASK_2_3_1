@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/index.css">
 	<body>
 		<div class="original_list">
+			<h3 class="original_list_h3">原始数据表</h3>
 			<ul id="source">
 				<li>北京空气质量：<b>90</b></li>
 				<li>上海空气质量：<b>70</b></li>
@@ -18,14 +19,17 @@
 
 			</ul>
 		</div>
-		<ul id="resort">
-			<!--
-			<li>第一名：北京空气质量：<b>90</b></li>
-			<li>第二名：北京空气质量：<b>90</b></li>
-			<li>第三名：北京空气质量：<b>90</b></li>
-			-->
-		</ul>
 		<button id="sort-btn">排序</button>
+		<div class="display_list">
+			<h3 class="display_list_h3">结果数据表</h3>
+			<ul id="resort">
+				<!--
+				<li>第一名：北京空气质量：<b>90</b></li>
+				<li>第二名：北京空气质量：<b>90</b></li>
+				<li>第三名：北京空气质量：<b>90</b></li>
+				-->
+			</ul>
+		</div>		
 	</body>
 	<script type="text/javascript">
 		var sort_source = document.getElementById("source");//获取source列表
@@ -64,7 +68,7 @@
 		*/
 		function sortAqiData(data) {
 			for(var i = 0;i < source_length;i++){
-				for(var j = 1;j < i;j++){
+				for(var j = 0;j < source_length;j++){
 					if(data[i][1] >= data[j][1]){
 						var x = data[i];
 						data[i] = data[j];
@@ -85,7 +89,7 @@
 		* 格式见ul中的注释的部分
 		*/
 		function render(data) {
-
+			
 		}
 
 		function btnHandle() {
