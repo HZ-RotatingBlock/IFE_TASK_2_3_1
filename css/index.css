@@ -61,6 +61,14 @@ h3{
 .display_list{
 	margin-top:10px;
 }
+#resort li:last-child{
+	border-bottom:none;
+}
+#resort li:hover{
+	color:#fff;
+	background-color:#000;
+	transform:perspective(400px) rotateY(20deg);
+}
 /*结果数据列表结束*/
 /*排序按钮开始*/
 #sort-btn{
