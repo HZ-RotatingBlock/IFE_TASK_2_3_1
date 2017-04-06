@@ -39,6 +39,7 @@
 		//声明两个新数组用于存储两个维数组中的值
 		var test_1 = new Array();
 		var test_2 = new Array();
+		var resort_list = document.getElementById("resort");
 		/**
 		* getData方法
 		* 读取id为source的列表，获取其中城市名字及城市对应的空气质量
@@ -72,11 +73,7 @@
 					if(data[i][1] >= data[j][1]){
 						var x = data[i];
 						data[i] = data[j];
-						//alert(data[j].length);
-						//alert(data[j]);
 						data[j] = x;
-						//alert(data[j].length);
-						//alert(data[j]);
 					}
 				}
 			}
@@ -89,7 +86,9 @@
 		* 格式见ul中的注释的部分
 		*/
 		function render(data) {
-			
+			for(var i = 1;i < source_length;i++){
+				resort_list.innerHTML += '<li>' + data[i][0] + '<b>' + data[i][1] + '</b>' + '</li>';
+			}
 		}
 
 		function btnHandle() {
