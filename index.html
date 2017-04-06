@@ -96,13 +96,18 @@
 			aqiData = sortAqiData(aqiData);//将获取到的数组排序后重新赋值给变量
 			render(aqiData);//将排序的数组按照格式输出显示到resort的列表中
 		}
-
+		var click_num = 0;
 		function init() {
-		// 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-			var button_click = document.getElementById("sort-btn");
-			button_click.onclick = function(){
-				btnHandle();
-			}
+			// 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数			
+			if(click_num == 0){
+				var button_click = document.getElementById("sort-btn");
+				button_click.onclick = function(){
+					while(click_num == 0){
+						btnHandle();
+						click_num++;
+					}				
+				}			
+			}	
 		}
 
 		init();
